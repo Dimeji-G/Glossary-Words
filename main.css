@@ -1,0 +1,185 @@
+* {
+    box-sizing: border-box;
+    /* margin: 0;
+    padding: 0; */
+}
+
+body {
+    background-color: black;
+    color: white;    
+    position: relative;
+    top: 40px;
+}
+
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    text-align: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container h1 {
+    font-family: 'Outfit', sans-serif;
+    margin: 10px auto;
+    font-size: 1.5em;
+}
+
+.main-container {
+    padding: 20px;
+    width: 100%;
+    border-radius: 20px;
+    backdrop-filter: blur(2px);
+    /* background: rgba(255, 255, 255, 0.062); */
+    /* border: solid white 1px; */
+}
+
+.navbar {
+    border-radius: 8px;
+    margin: 16px auto;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    max-width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.navbar-logo-img {
+    width: 28px;
+    margin-right: 8px;
+}
+
+.navbar-logo-text {
+    color: #fff;
+    font-family: 'Outfit', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.navbar-cta {
+    background: linear-gradient(259deg, #242424 0%, #101010 100%);
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.2);
+} 
+
+.day-buttons {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin: 0 auto;
+}
+
+.day-btn, .command-btn {
+    background: #2d3a4b;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 16px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    /* overflow: hidden; */
+}
+
+.day-btn:hover {
+    background: #38b6ff;
+}
+
+button:hover {
+    background: #38b6ff;
+}
+
+.controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 0 auto;
+    width: 100%;
+    white-space: nowrap;
+    font-size: 10px;
+}
+
+#backToFlashcardsBtn {
+    grid-column: span 2;
+}
+
+.flashcard-container {
+    margin: 10px auto;
+    width: 100%;
+    height: 250px;
+}
+
+
+.flashcard {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-radius: 8px;
+    cursor: pointer;
+    background: white;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flashcard.flipped {
+    transform: rotateY(360deg);
+}
+
+.flashcard-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* .flashcard-front {
+    background: white;
+    color: black;
+}
+
+.flashcard-back {
+    background: white;
+    color: black;
+    transform: rotateY(180deg);
+} */
+
+@media screen and (max-width:400px) {
+    .main-container{
+        border: none;
+        padding: 0;
+    }
+}

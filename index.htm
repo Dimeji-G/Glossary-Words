@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Dimroid Glossary Flashcards</title>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="main.css">
+            <link rel="stylesheet" href="sentences.css">
+        </head>
+        <body>
+            <div id="particles-js"></div>
+            <div class="container">
+                <div class="main-container">
+                    <nav class="navbar">
+                        <a href="https://dimroid.engineer" rel="noopener" class="navbar-logo" target="_blank" rel="noopener">
+                            <img src="../Images/Dimroid_black_and_white.png" alt="Logo"
+                                class="navbar-logo-img">
+                            <span class="navbar-logo-text">Dimroid</span>
+                        </a>
+                        <a href="https://dimroid.engineer/Skills_Section/Contact.html" target="_blank" class="navbar-cta">
+                            Let's Talk
+                        </a>
+                    </nav>
+
+                    <h1>Glossary Flashcards</h1>
+                    <div style="display: flex; text-align: center; flex-direction: column; align-items: center; margin-bottom: 10px; padding:0 10px;">
+                        <label for="calendar" style="font-size: 1rem; color: white; margin-bottom: 4px;">Select a date to view that week's glossary flashcards:</label>
+                        <input type="date" id="calendar" style="padding: 6px 12px; color: black; border-radius: 6px; border: 1px solid #ccc; font-size: 1rem;" />
+                        <div id="week-indicator" style="margin-top: 6px; color: #38b6ff; font-weight: bold;"></div>
+                    </div>
+                    <div class="day-buttons">
+                        <button class="day-btn" data-day="monday">Mon</button>
+                        <button class="day-btn" data-day="tuesday">Tues</button>
+                        <button class="day-btn" data-day="wednesday">Wed</button>
+                        <button class="day-btn" data-day="thursday">Thurs</button>
+                        <button class="day-btn" data-day="friday">Fri</button>
+                        <button class="day-btn" data-day="saturday">Sat</button>
+                        <button class="day-btn" data-day="sunday">Sun</button>
+                    </div>
+                    <div class="counter" id="counter"></div>
+                    <div style="display: flex; margin-top: 25px; justify-content: center; align-items: center; gap: 16px; margin-bottom: 4px;">
+                        <span id="front-label" style="font-weight: bold; color: #aaa;">Front</span>
+                        <span id="back-label" style="font-weight: bold; color: #5a6675;" >Back</span>
+                    </div>
+
+                   <div class="flashcard-container">
+                       <div class="flashcard" id="flashcard">
+                           <div class="flashcard-face flashcard-front" id="flashcard-front">Loading...</div>
+                           <div class="flashcard-face flashcard-back" id="flashcard-back">Loading...</div>
+                       </div>
+                   </div>
+                   <div class="controls">
+                       <button class="command-btn" id="prevBtn">Previous</button>
+                       <button class="command-btn" id="flipBtn">Flip</button>
+                       <button class="command-btn" id="nextBtn">Next</button>
+                       <button class="command-btn" id="viewSentencesBtn">Sentences</button>
+                    </div>
+
+                </div>
+            </div>
+            
+            <div id="sentences-section" class="container" style="display: none;">
+                <div class="main-container">
+                    <nav class="navbar">
+                        <a href="https://dimroid.engineer" rel="noopener" class="navbar-logo" target="_blank" rel="noopener">
+                            <img src="../Images/Dimroid_black_and_white.png" alt="Logo"
+                                class="navbar-logo-img">
+                            <span class="navbar-logo-text">Dimroid</span>
+                        </a>
+                        <a href="https://dimroid.engineer/Skills_Section/Contact.html" target="_blank" class="navbar-cta">
+                            Let's Talk
+                        </a>
+                    </nav>
+
+                    <h1 id="sentences-title">Sentences for: <span id="current-word"></span></h1>
+                    
+                    <div class="controls" style="margin-bottom: 20px;">
+                        <button class="command-btn" id="backToFlashcardsBtn">
+                            <i class="fa fa-arrow-left" aria-hidden="true" style="margin-right:8px;"></i>
+                            Back to Flashcards
+                        </button>
+                    </div>
+
+                    <div class="sentences-container">
+                        <div class="sentences-wrapper">
+                            <div class="sentences-track" id="sentencesTrack">
+                                <div class="sentence-div active" id="sentence1">
+                                    <div class="sentence-number">Sentence 1</div>
+                                    <div class="sentence-text">Loading sentence...</div>
+                                </div>
+                                
+                                <div class="sentence-div" id="sentence2">
+                                    <div class="sentence-number">Sentence 2</div>
+                                    <div class="sentence-text">Loading sentence...</div>
+                                </div>
+                                
+                                <div class="sentence-div" id="sentence3">
+                                    <div class="sentence-number">Sentence 3</div>
+                                    <div class="sentence-text">Loading sentence...</div>
+                                </div>
+                                
+                                <div class="sentence-div" id="sentence4">
+                                    <div class="sentence-number">Sentence 4</div>
+                                    <div class="sentence-text">Loading sentence...</div>
+                                </div>
+                                
+                                <div class="sentence-div" id="sentence5">
+                                    <div class="sentence-number">Sentence 5</div>
+                                    <div class="sentence-text">Loading sentence...</div>
+                                </div>
+                                
+                                <div class="sentence-div" id="sentence6">
+                                    <div class="sentence-number">Sentence 6</div>
+                                    <div class="sentence-text">Loading sentence...</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="controls">
+                        <button class="command-btn" id="sentencePrevBtn">Previous Sentence</button>
+                        <button class="command-btn" id="sentenceNextBtn">Next Sentence</button>
+                    </div>
+                </div>
+            </div>
+
+               
+            <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+            <script src="particle.js"></script>
+            <script src="flashcard.js"></script>
+            <script src="sentences.js"></script>
+        </body>
+</html>
