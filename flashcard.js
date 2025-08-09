@@ -1,6 +1,6 @@
 // Flashcard functionality
 function loadLocalCSV() {
-  fetch('../glossary_words_py.csv')
+  fetch('./glossary_words_py.csv')
     .then(response => {
       if (!response.ok) throw new Error('Local CSV not found');
       return response.text();
