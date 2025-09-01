@@ -51,8 +51,14 @@ body {
     width: 100%;
     border-radius: 20px;
     backdrop-filter: blur(2px);
-    /* background: rgba(255, 255, 255, 0.062); */
-    /* border: solid white 1px; */
+    background: rgba(255, 255, 255, 0.062);
+    max-width: 800px;
+}
+
+@media screen and (max-width:437px) {
+    .main-container {
+        background: rgba(255, 255, 255, 0);
+    }
 }
 
 .navbar {
